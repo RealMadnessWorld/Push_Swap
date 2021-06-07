@@ -13,4 +13,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+int     ft_atoi(const char *str);
+
 #endif
