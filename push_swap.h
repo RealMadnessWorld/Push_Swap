@@ -14,8 +14,23 @@
 # define PUSH_SWAP_H
 
 # include <stdio.h>
-//# include <
+# include <unistd.h>
+typedef INT_MIN ;
+typedef INT_MAX ;
 
-int     ft_atoi(const char *str);
+typedef struct s_stack
+{
+	int				value;
+	struct s_stack	*next;
+}				t_stack;
+
+				/***Tools***/
+int			ft_atoi(const char *str);
+
+				/***linked lists***/
+t_stack		*ft_lstlast(t_stack *lst);
+void		ft_lstadd_back(t_stack **lst, t_stack *new);
+t_stack		*ft_lstnew(void *content);
+void		ft_lstadd_front(t_stack **lst, t_stack *new);
 
 #endif

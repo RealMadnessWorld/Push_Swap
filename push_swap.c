@@ -1,45 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jarsenio <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/24 19:30:44 by jarsenio          #+#    #+#             */
-/*   Updated: 2021/05/24 19:30:46 by jarsenio         ###   ########.fr       */
+/*   Created: 2021/06/11 17:18:01 by jarsenio          #+#    #+#             */
+/*   Updated: 2021/06/11 17:18:03 by jarsenio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <push_swap.h>
 
-int	*conv(int argc, char **argv, int *stack_a)
+t_stack *convert_argv(int argc, char **argv)
 {
-	int i;
-	int j;
+	t_stack *head;
 
-	i = 0;
-	j = 1;
-	while (i < argc - 1)
-	{
-		stack_a[i] = ft_atoi(argv[j]);
-		j++;
-		i++;
-	}
-	return (stack_a);
 }
 
 int main(int argc, char **argv)
 {
-	int size = argc - 1;
-	int stack_a[size];
-	int stack_b[size];
-	int i = 0;
+	t_stack *stack_a;
+	t_stack *stack_b;
 
-	conv(argc, argv, stack_a);
-	printf("hi\n");
-	while (i < argc - 1)
-	{	
-		printf("%i\n", stack_a[i]);
-		i++;
-	}
+	conv_argv()
 }
