@@ -10,12 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "push_swap.h"
 
 t_stack *convert_argv(int argc, char **argv)
 {
 	t_stack *head;
-
+	int i;
+	
+	head = NULL;
+	i = 1;
+	while (i < argc)
+	{
+		ft_lstadd_back(&head, ft_lstnew(ft_atoi(argv[i])));
+		i++;
+	}
+	return (head);
 }
 
 int main(int argc, char **argv)
@@ -23,5 +32,13 @@ int main(int argc, char **argv)
 	t_stack *stack_a;
 	t_stack *stack_b;
 
-	conv_argv()
+	stack_a = NULL;
+	stack_b = NULL;
+
+	stack_a = convert_argv(argc, argv);
+	while (stack_a)
+	{
+		printf("-%i-", stack_a->content);
+		stack_a = stack_a->next;
+	}
 }

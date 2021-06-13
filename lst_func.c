@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "push_swap.h"
 
 t_stack		*ft_lstlast(t_stack *lst)
 {
@@ -41,14 +41,14 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 }
 
 
-t_stack	*ft_lstnew(void *content)
+t_stack	*ft_lstnew(int content)
 {
 	t_stack	*new;
 
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 		return (0);
-	new->value = content;
+	new->content = content;
 	new->next = NULL;
 	return (new);
 }

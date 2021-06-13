@@ -15,13 +15,14 @@
 
 # include <stdio.h>
 # include <unistd.h>
-typedef INT_MIN ;
-typedef INT_MAX ;
+# include <stdlib.h>
+//typedef INT_MIN ;
+//typedef INT_MAX ;
 
 typedef struct s_stack
 {
-	int				value;
-	struct s_stack	*next;
+	int					content;
+	struct s_stack		*next;
 }				t_stack;
 
 				/***Tools***/
@@ -30,7 +31,7 @@ int			ft_atoi(const char *str);
 				/***linked lists***/
 t_stack		*ft_lstlast(t_stack *lst);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
-t_stack		*ft_lstnew(void *content);
+t_stack		*ft_lstnew(int content);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
 
 #endif
