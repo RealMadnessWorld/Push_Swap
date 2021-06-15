@@ -36,3 +36,12 @@ int		ft_atoi(const char *str)
 	else
 		return (n);
 }
+
+void	swap(int a, int b)
+{
+	int temp;
+
+	temp = a;
+	a = b;
+	b = temp;
+}

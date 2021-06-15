@@ -29,16 +29,19 @@ t_stack *convert_argv(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
+	t_stack *stk_a;
+	//t_stack *stk_b;
 
-	stack_a = NULL;
-	stack_b = NULL;
+	if (argc < 3)
+		return(write(1,"Error\n",6));
+	stk_a = NULL;
+	//stk_b = NULL;
 
-	stack_a = convert_argv(argc, argv);
-	while (stack_a)
+	stk_a = convert_argv(argc, argv);
+	while (stk_a)
 	{
-		printf("-%i-", stack_a->content);
-		stack_a = stack_a->next;
+		printf("-%i-", stk_a->content);
+		stk_a = stk_a->next;
 	}
+	printf("\n");
 }

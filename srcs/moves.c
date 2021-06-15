@@ -11,3 +11,13 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stack *sa(t_stack *stk_a)
+{
+	if (!stk_a)
+		return ;
+	if (stk_a->next)
+	{
+		swap(stk_a->content, stk_a->next->content);
+	}
+}
