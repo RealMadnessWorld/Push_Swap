@@ -27,11 +27,20 @@ typedef struct s_stack
 
 				/***Tools***/
 int			ft_atoi(const char *str);
+void		swap(int *a, int *b);
+void		ft_putstr(char *s);
 
 				/***linked lists***/
 t_stack		*ft_lstlast(t_stack *lst);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
 t_stack		*ft_lstnew(int content);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
+
+				/***Moves***/
+void		sa(t_stack *stk_a);
+void		sb(t_stack *stk_b);
+void		ss(t_stack *stk_a, t_stack *stk_b);
+void    	pa(t_stack **stk_a, t_stack **stk_b);
+void    	pb(t_stack **stk_a, t_stack **stk_b);
 
 #endif

@@ -37,11 +37,25 @@ int		ft_atoi(const char *str)
 		return (n);
 }
 
-void	swap(int a, int b)
+void	swap(int *a, int *b)
 {
 	int temp;
 
-	temp = a;
-	a = b;
-	b = temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+void	ft_putstr(char *s)
+{
+	int		i;
+
+	if (!s)
+		return ;
+	i = 0;
+	while (*s != '\0')
+	{
+		write(1, s, 1);
+		s++;
+	}
 }

@@ -30,14 +30,19 @@ t_stack *convert_argv(int argc, char **argv)
 int main(int argc, char **argv)
 {
 	t_stack *stk_a;
-	//t_stack *stk_b;
+	t_stack *stk_b;
 
 	if (argc < 3)
 		return(write(1,"Error\n",6));
 	stk_a = NULL;
-	//stk_b = NULL;
+	stk_b = NULL;
 
 	stk_a = convert_argv(argc, argv);
+	pb(&stk_a, &stk_b);
+	pb(&stk_a, &stk_b);
+	ss(stk_a, stk_b);
+	pa(&stk_a, &stk_b);
+	pa(&stk_a, &stk_b);
 	while (stk_a)
 	{
 		printf("-%i-", stk_a->content);
