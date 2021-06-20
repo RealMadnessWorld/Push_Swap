@@ -48,11 +48,8 @@ void	swap(int *a, int *b)
 
 void	ft_putstr(char *s)
 {
-	int		i;
-
 	if (!s)
 		return ;
-	i = 0;
 	while (*s != '\0')
 	{
 		write(1, s, 1);

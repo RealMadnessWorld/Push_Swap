@@ -40,7 +40,10 @@ void		ft_lstadd_front(t_stack **lst, t_stack *new);
 void		sa(t_stack *stk_a);
 void		sb(t_stack *stk_b);
 void		ss(t_stack *stk_a, t_stack *stk_b);
-void    	pa(t_stack **stk_a, t_stack **stk_b);
-void    	pb(t_stack **stk_a, t_stack **stk_b);
+void		pa(t_stack **stk_a, t_stack **stk_b);
+void		pb(t_stack **stk_a, t_stack **stk_b);
+void		ra(t_stack **stk_a, int print);
+void		rb(t_stack **stk_b, int print);
+void		rr(t_stack **stk_a, t_stack **stk_b);
 
 #endif
