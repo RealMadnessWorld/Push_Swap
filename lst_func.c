@@ -12,35 +12,6 @@
 
 #include "push_swap.h"
 
-t_stack		*ft_lstlast(t_stack *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst)
-	{
-		if (lst->next == NULL)
-			return (lst);
-		lst = lst->next;
-	}
-	return (lst);
-}
-
-void	ft_lstadd_back(t_stack **lst, t_stack *new)
-{
-	t_stack *temp;
-
-	if (!new)
-		return ;
-	temp = ft_lstlast(*lst);
-	if (!*lst)
-	{
-		*lst = new;
-		return ;
-	}
-	temp->next = new;
-}
-
-
 t_stack	*ft_lstnew(int content)
 {
 	t_stack	*new;
@@ -51,17 +22,4 @@ t_stack	*ft_lstnew(int content)
 	new->content = content;
 	new->next = NULL;
 	return (new);
-}
-
-void	ft_lstadd_front(t_stack **lst, t_stack *new)
-{
-	if (!new)
-		return ;
-	if (!*lst)
-	{
-		*lst = new;
-		return ;
-	}
-	new->next = *lst;
-	*lst = new;
 }
