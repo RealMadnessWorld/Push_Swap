@@ -45,5 +45,6 @@ void		pb(t_stack **stk_a, t_stack **stk_b);
 void		ra(t_stack **stk_a, int print);
 void		rb(t_stack **stk_b, int print);
 void		rr(t_stack **stk_a, t_stack **stk_b);
+void		rra(t_stack **stk_a, int print);
 
 #endif

@@ -1,7 +1,7 @@
 NAME = push_swap
 
 FLAGS = -Wall -Werror -Wextra -g
-SRC_PUSH_SWAP = lst_func.c swap.c push_swap.c tools.c push.c rot.c
+SRC_PUSH_SWAP = lst_func.c swap.c push_swap.c tools.c push.c rot.c rev_rot.c
 
 OBJ = $(SRC_PUSH_SWAP:.c=.o)
 

@@ -14,14 +14,22 @@
 
 void	rra(t_stack **stk_a, int print)
 {
-	t_stack tmp;
-	t_stack also_tmp;
+	t_stack *tmp;
+	t_stack *also_tmp;
 
-	also_tmp = *stk_a;
-	while (*stk_a)
+	also_tmp = NULL;
+	tmp = *stk_a;
+	while (tmp->next)
 	{
-		*stk_a = (*stk_a)->next;
+		if (tmp->next->next == NULL)
+		{
+			also_tmp = tmp->next;
+			also_tmp->next = NULL;
+		}
+		tmp = tmp->next;
 	}
-	tmp = 
-
+	tmp = also_tmp;
+	tmp->next = *stk_a;
+	if (print == 1)
+		ft_putstr("rra\n");
 }

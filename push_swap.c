@@ -44,6 +44,7 @@ int main(int argc, char **argv)
 	pa(&stk_a, &stk_b);
 	pa(&stk_a, &stk_b);
 	ra(&stk_a, 1);
+	//rra(stk_a, 1);
 	while (stk_a)
 	{
 		printf("-%i-", stk_a->content);
