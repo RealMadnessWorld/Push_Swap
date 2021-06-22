@@ -23,3 +23,44 @@ t_stack	*ft_lstnew(int content)
 	new->next = NULL;
 	return (new);
 }
+
+t_stack		*ft_lstlast(t_stack *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst)
+	{
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
+}
+
+void	ft_lstadd_back(t_stack **lst, t_stack *new)
+{
+	t_stack *temp;
+
+	if (!new)
+		return ;
+	temp = ft_lstlast(*lst);
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	temp->next = new;
+}
+
+void	be_free_my_child(t_stack *lst)
+{
+	t_stack *tmp;
+	while (lst)
+	{
+		tmp = lst;
+		if (tmp)
+			free(tmp);
+		lst = lst->next;
+	}
+	lst = NULL;
+}

@@ -60,7 +60,7 @@ void	rrb(t_stack **stk_b, int print)
 
 void	rrr(t_stack **stk_a, t_stack **stk_b)
 {
-	rra(&stk_a, 0);
-	rrb(&stk_b, 0);
+	rra(stk_a, 0);
+	rrb(stk_b, 0);
 	ft_putstr("rrr\n");
 }

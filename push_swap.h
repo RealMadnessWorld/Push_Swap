@@ -16,8 +16,8 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-//typedef INT_MIN ;
-//typedef INT_MAX ;
+// typedef INT_MIN -2147483648;
+// typedef INT_MAX 2147483647;
 
 typedef struct s_stack
 {
@@ -25,16 +25,24 @@ typedef struct s_stack
 	struct s_stack		*next;
 }				t_stack;
 
+				/***Convert Args***/
+t_stack 	*convert_argv(int argc, char **argv);
+t_stack		*the_creator(int argc, char **argv, t_stack *head, int i);
+int			check(char *s);
+int 		double_check(int xxx);
+int			triple_check(t_stack *list);
+
 				/***Tools***/
 int			ft_atoi(const char *str);
 void		swap(int *a, int *b);
 void		ft_putstr(char *s);
+int			ft_isdigit(int c);
 
 				/***linked lists***/
 t_stack		*ft_lstlast(t_stack *lst);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
 t_stack		*ft_lstnew(int content);
-void		ft_lstadd_front(t_stack **lst, t_stack *new);
+void		be_free_my_child(t_stack *lst);
 
 				/***Moves***/
 void		sa(t_stack *stk_a);
