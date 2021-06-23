@@ -12,29 +12,23 @@
 
 #include "push_swap.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int neg;
-	int n;
+	long long	res;
+	int			sign;
 
-	n = 0;
-	neg = 0;
-	while (*str == '\t' || *str == '\n' || *str == '\v' ||
-			*str == '\f' || *str == '\r' || *str == ' ')
+	res = 0;
+	while ((*str > 8 && *str < 14) || *str == 32)
 		str++;
-	if (*str == '+')
-		str++;
-	else if (*str == '-')
+	sign = (*str == '-' ? (-1) : 1);
+	(*str == '-' || *str == '+') ? str++ : 0;
+	while (*str > 47 && *str < 58)
 	{
-		neg = 1;
-		str++;
+		res = (res * 10) + (*str++ - 48);
+		if (res < 0)
+			return ((sign == 1) ? -1 : 0);
 	}
-	while (*str != '\0' && *str >= '0' && *str <= '9')
-		n = n * 10 + (*str++ - '0');
-	if (neg == 1)
-		return (-n);
-	else
-		return (n);
+	return ((int)(res * sign));
 }
 
 void	swap(int *a, int *b)

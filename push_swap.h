@@ -29,7 +29,6 @@ typedef struct s_stack
 t_stack 	*convert_argv(int argc, char **argv);
 t_stack		*the_creator(int argc, char **argv, t_stack *head, int i);
 int			check(char *s);
-int 		double_check(int xxx);
 int			triple_check(t_stack *list);
 
 				/***Tools***/
