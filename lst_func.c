@@ -64,3 +64,16 @@ void	be_free_my_child(t_stack *lst)
 	}
 	lst = NULL;
 }
+
+int		ft_lstsize(t_stack *lst)
+{
+	int i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}

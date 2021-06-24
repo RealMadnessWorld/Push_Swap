@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
 	long long	res;
 	int			sign;
@@ -28,7 +28,7 @@ int	ft_atoi(const char *str)
 		if (res < 0)
 			return ((sign == 1) ? -1 : 0);
 	}
-	return ((int)(res * sign));
+	return ((long int)(res * sign));
 }
 
 void	swap(int *a, int *b)

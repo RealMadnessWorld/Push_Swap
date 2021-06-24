@@ -25,14 +25,17 @@ typedef struct s_stack
 	struct s_stack		*next;
 }				t_stack;
 
+				/***Sorting***/
+int			median(t_stack *stk_a);
+
 				/***Convert Args***/
 t_stack 	*convert_argv(int argc, char **argv);
 t_stack		*the_creator(int argc, char **argv, t_stack *head, int i);
-int			check(char *s);
-int			triple_check(t_stack *list);
+int			check(char *s, int i, int leng);
+int			check_dup(t_stack *list);
 
 				/***Tools***/
-int			ft_atoi(const char *str);
+long int	ft_atoi(const char *str);
 void		swap(int *a, int *b);
 void		ft_putstr(char *s);
 int			ft_isdigit(int c);
@@ -42,6 +45,7 @@ t_stack		*ft_lstlast(t_stack *lst);
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
 t_stack		*ft_lstnew(int content);
 void		be_free_my_child(t_stack *lst);
+int			ft_lstsize(t_stack *lst);
 
 				/***Moves***/
 void		sa(t_stack *stk_a);
