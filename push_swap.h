@@ -26,7 +26,9 @@ typedef struct s_stack
 }				t_stack;
 
 				/***Sorting***/
-int			median(t_stack *stk_a);
+void		mediana(t_stack *stk_a, int size);
+int			*pre_sort(int *tab, int size);
+void		get_to_work(t_stack *stk_a);
 
 				/***Convert Args***/
 t_stack 	*convert_argv(int argc, char **argv);

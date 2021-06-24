@@ -15,23 +15,21 @@
 void	get_to_work(t_stack *stk_a)
 {
 	if (ft_lstsize(stk_a) < 8)
-		short_sort();
-	else
-		big_boi_sort();
+		mediana(stk_a, ft_lstsize(stk_a));
+	// else
+	// 	big_boi_sort();
 }
 
 int main(int argc, char **argv)
 {
 	t_stack *stk_a;
-	t_stack *stk_b;
 
 	if (argc < 3)
 		return(write(1,"Error\n",6));
 	stk_a = NULL;
-	stk_b = NULL;
 	if (!(stk_a = convert_argv(argc, argv)))
 		return (write(1,"Error\n",6));
-
+	get_to_work(stk_a);
 	while (stk_a)
 	{
 		printf("%i  ", stk_a->content);
