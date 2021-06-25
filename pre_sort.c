@@ -38,7 +38,7 @@ int	*pre_sort(int *tab, int size)
 	return (tab);
 }
 
-void	mediana(t_stack *stk_a, int size)
+int	mediana(t_stack *stk_a, int size)
 {
 	int *tab;
 	int i;
@@ -52,4 +52,10 @@ void	mediana(t_stack *stk_a, int size)
 		i++;
 	}
 	tab = pre_sort(tab, size);
+	i = 0;
+	while (i < size / 2)
+		i++;
+	i = tab[i];
+	free(tab);
+	return (i);
 }

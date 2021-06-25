@@ -13,3 +13,10 @@
 #include "push_swap.h"
 
 void	short_sort()
+{
+	int i;
+
+	if
+
+	i = mediana(stk_a, ft_lstsize(stk_a));
+}

@@ -14,8 +14,10 @@
 
 void	get_to_work(t_stack *stk_a)
 {
+	int i;
+
 	if (ft_lstsize(stk_a) < 8)
-		mediana(stk_a, ft_lstsize(stk_a));
+		short_sort()
 	// else
 	// 	big_boi_sort();
 }

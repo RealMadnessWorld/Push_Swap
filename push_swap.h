@@ -26,7 +26,7 @@ typedef struct s_stack
 }				t_stack;
 
 				/***Sorting***/
-void		mediana(t_stack *stk_a, int size);
+int			mediana(t_stack *stk_a, int size);
 int			*pre_sort(int *tab, int size);
 void		get_to_work(t_stack *stk_a);
 
