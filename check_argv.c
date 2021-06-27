@@ -65,6 +65,7 @@ t_stack	*the_creator(int argc, char **argv, t_stack *head, int i)
 	{
 		if (!check(argv[i], 0, 0))
 		{
+			printf("failed first check\n");
 			if (head)
 				be_free_my_child(head);
 			return (0);
@@ -87,10 +88,10 @@ t_stack *convert_argv(int argc, char **argv)
 	i = 1;
 	if (!(head = the_creator(argc, argv, head, i)))
 		return (0);
-	if (check_dup(head) == 0)
+	if (!check_dup(head))
 	{
-		printf("cleaning\n");
-		be_free_my_child(head);
+		printf("failed dup\n");
+		be_free_my_child(	head);
 		return (0);
 	}
 	return (head);

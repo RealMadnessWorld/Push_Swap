@@ -9,6 +9,7 @@ int	is_sorted(t_stack *stk)
 			return (0);
 		stk = stk->next;
 	}
+	printf("is sorted \n");
 	return (1);
 }
 
@@ -40,7 +41,15 @@ int	get_me_min(t_stack *stk)
 	return (min);
 }
 
-int	get_me_position(t_stack stk, int num)
+int	get_me_position(t_stack *stk, int num)
 {
-	
+	int pos;
+
+	pos = 0;
+	while (stk->content != num)
+	{
+		pos++;
+		stk = stk->next;
+	}
+	return (pos);
 }

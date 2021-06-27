@@ -17,7 +17,7 @@ void	get_to_work(t_stack *stk_a)
 	int i;
 
 	if (ft_lstsize(stk_a) < 8)
-		short_sort()
+		short_sort(stk_a);
 	// else
 	// 	big_boi_sort();
 }
@@ -38,4 +38,5 @@ int main(int argc, char **argv)
 		stk_a = stk_a->next;
 	}
 	printf("\n");
+	be_free_my_child(stk_a);
 }

@@ -25,6 +25,15 @@ typedef struct s_stack
 	struct s_stack		*next;
 }				t_stack;
 
+				/***Tracking***/
+int			is_sorted(t_stack *stk);
+int			get_me_max(t_stack *stk);
+int			get_me_min(t_stack *stk);
+int			get_me_position(t_stack *stk, int num);
+
+				/***Algorythm***/
+void		short_sort(t_stack *stk_a);
+
 				/***Sorting***/
 int			mediana(t_stack *stk_a, int size);
 int			*pre_sort(int *tab, int size);

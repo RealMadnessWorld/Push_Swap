@@ -12,11 +12,14 @@
 
 #include "push_swap.h"
 
-void	short_sort()
+void	short_sort(t_stack *stk_a)
 {
-	int i;
+	int size;
+	t_stack *stk_b;
 
-	if
-
-	i = mediana(stk_a, ft_lstsize(stk_a));
+	size = ft_lstsize(stk_a);
+	if (is_sorted(stk_a))
+		return ;
+	else
+		printf("not sorted");
 }
