@@ -54,15 +54,9 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 
 void	be_free_my_child(t_stack *lst)
 {
-	printf("hi! I'm free!\n");
-	// t_stack *tmp;
-	
 	while (lst)
 	{
-		printf("tmp: %i\n", lst->content);
-		// tmp = lst;
-		if (lst)
-			free(lst);
+		free(lst);
 		lst = lst->next;
 	}
 	lst = NULL;
