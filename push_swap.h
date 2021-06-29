@@ -25,6 +25,14 @@ typedef struct s_stack
 	struct s_stack		*next;
 }				t_stack;
 
+typedef struct s_data
+{
+	int	med;
+	int	size;
+	int max;
+	int min;
+}			t_data;
+
 				/***Tracking***/
 int			is_sorted(t_stack *stk);
 int			get_me_max(t_stack *stk);
@@ -32,12 +40,13 @@ int			get_me_min(t_stack *stk);
 int			get_me_position(t_stack *stk, int num);
 
 				/***Algorythm***/
-void		short_sort(t_stack *stk_a);
+void		short_sort(t_stack **stk_a);
+void		not_triplet(int size, t_stack **stk_a, t_stack **stk_b);
 
 				/***Sorting***/
 int			mediana(t_stack *stk_a, int size);
 int			*pre_sort(int *tab, int size);
-void		get_to_work(t_stack *stk_a);
+void		get_to_work(t_stack **stk_a);
 
 				/***Convert Args***/
 t_stack 	*convert_argv(int argc, char **argv);

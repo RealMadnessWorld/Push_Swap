@@ -31,6 +31,7 @@ void	rra(t_stack **stk_a, int print)
 		tmp = tmp->next;
 	}
 	*stk_a = also_tmp;
+	tmp = *stk_a;
 	if (print == 1)
 		ft_putstr("rra\n");
 }
