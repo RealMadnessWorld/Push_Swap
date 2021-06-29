@@ -31,6 +31,7 @@ typedef struct s_data
 	int	size;
 	int max;
 	int min;
+	int posi;
 }			t_data;
 
 				/***Tracking***/
@@ -42,11 +43,12 @@ int			get_me_position(t_stack *stk, int num);
 				/***Algorythm***/
 void		short_sort(t_stack **stk_a);
 void		not_triplet(int size, t_stack **stk_a, t_stack **stk_b);
-
-				/***Sorting***/
 int			mediana(t_stack *stk_a, int size);
 int			*pre_sort(int *tab, int size);
 void		get_to_work(t_stack **stk_a);
+void		sort_three(t_stack **stk_a, t_stack **stk_b);
+void		big_boi_sort(t_stack **stk_a);
+void		devide(t_stack **stk_a, t_stack **stk_b, t_data *data);
 
 				/***Convert Args***/
 t_stack 	*convert_argv(int argc, char **argv);
@@ -77,5 +79,7 @@ void		ra(t_stack **stk_a, int print);
 void		rb(t_stack **stk_b, int print);
 void		rr(t_stack **stk_a, t_stack **stk_b);
 void		rra(t_stack **stk_a, int print);
+void		rrb(t_stack **stk_b, int print);
+void		rrr(t_stack **stk_a, t_stack **stk_b);
 
 #endif

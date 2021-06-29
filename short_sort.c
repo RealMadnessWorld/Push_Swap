@@ -12,6 +12,19 @@
 
 #include "push_swap.h"
 
+void	sort_three(t_stack **stk_a, t_stack **stk_b)
+{
+	while (!is_sorted(*stk_a))
+	{
+		if ((*stk_a)->content >= get_me_max(*stk_a))
+			ra(stk_a, 1);
+		else if ((*stk_a)->content > (*stk_a)->next->content)
+			sa(*stk_a);
+		else
+			ra(stk_a, 1);
+	}
+}
+
 void	not_triplet(int size, t_stack **stk_a, t_stack **stk_b)
 {
 	int i;
@@ -46,15 +59,7 @@ void	short_sort(t_stack **stk_a)
 		return ;
 	if (size > 3)
 		not_triplet(size, stk_a, &stk_b);
-	while (!is_sorted(*stk_a))
-	{
-		if ((*stk_a)->content >= get_me_max(*stk_a))
-			ra(stk_a, 1);
-		else if ((*stk_a)->content > (*stk_a)->next->content)
-			sa(*stk_a);
-		else
-			ra(stk_a, 1);
-	}
+	sort_three(stk_a, &stk_b);
 	if (size > 3)
 	{
 		pa(stk_a, &stk_b);

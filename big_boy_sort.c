@@ -12,7 +12,30 @@
 
 #include "push_swap.h"
 
-void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b, t_data *data)
+void	actual_sort(t_stack **stk_a, t_stack **stk_b, t_data *data)
+{
+	int x;
+
+	while (stk_b)
+	{
+		data->max = get_me_max(*stk_b);
+		data->size = ft_lstsize(*stk_b);
+		if (get_me_position(*stk_b, data->max) < data->size)
+			x = 1;
+		else
+			x = 0;
+		while (get_me_position(*stk_b, data->max) != 1)
+		{
+			if (x == 1)
+				rb(stk_b, 1);
+			else
+				rrb(stk_b, 1);
+		}
+		pa(stk_a, stk_b);
+	}
+}
+
+void	devide(t_stack **stk_a, t_stack **stk_b, t_data *data)
 {
 	while (ft_lstsize(*stk_a) > 3)
 	{
@@ -21,12 +44,16 @@ void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b, t_data *data)
 		while (ft_lstsize(*stk_a) > data->size / 2)
 		{
 			if ((*stk_a)->content < data->med)
-				pb(*stk_a, *stk_b);
+				pb(stk_a, stk_b);
+			else
+				ra(stk_a, 1);
 		}
 	}
+	sort_three(stk_a, stk_b);
+	actual_sort(stk_a, stk_b, data);
 }
 
-int	big_boi_sort(t_stack **stk_a)
+void	big_boi_sort(t_stack **stk_a)
 {
 	t_stack *stk_b;
 	t_data	*data;
@@ -36,8 +63,5 @@ int	big_boi_sort(t_stack **stk_a)
 	if (is_sorted(*stk_a))
 		return ;
 	while (!is_sorted(*stk_a))
-	{
-		devide_n_conquer(stk_a, stk_b, data);
-	}
-	
+		devide(stk_a, &stk_b, data);
 }
