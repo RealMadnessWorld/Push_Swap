@@ -18,6 +18,8 @@ void	get_to_work(t_stack **stk_a)
 
 	if (ft_lstsize(*stk_a) < 8)
 		short_sort(stk_a);
+	else if (ft_lstsize(*stk_a) <= 100)
+		big_boi_sort(stk_a);
 	else
 		big_boi_sort(stk_a);
 }
@@ -34,11 +36,12 @@ int main(int argc, char **argv)
 		return (write(1,"Error\n",6));
 	get_to_work(&stk_a);
 	tmp = stk_a;
-	while (tmp)
-	{
-		printf("*%i*", tmp->content);
-		tmp = tmp->next;
-	}
-	printf("\n");
+	// while (tmp)
+	// {
+	// 	printf("*%i*", tmp->content);
+	// 	tmp = tmp->next;
+	// }
+	// printf("\n");
 	be_free_my_child(stk_a);
+	return 0;
 }

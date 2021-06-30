@@ -29,16 +29,10 @@ int	*pre_sort(int *tab, int size)
 		}
 		i++;
 	}
-	// i = 0;
-	// while (i < size)
-	// {
-	// 	printf("ordered :%i\n", tab[i]);
-	// 	i++;
-	// }
 	return (tab);
 }
 
-int	mediana(t_stack *stk_a, int size)
+int	mediana(t_stack *stk_a, int size, int chunks)
 {
 	int *tab;
 	int i;
@@ -53,9 +47,17 @@ int	mediana(t_stack *stk_a, int size)
 	}
 	tab = pre_sort(tab, size);
 	i = 0;
-	while (i < size / 2)
-		i++;
-	i = tab[i];
+	if (size <= 100)
+	{
+		while (i < size / 2)
+			i++;
+		i = tab[i];
+	}
+	else
+	{
+		chunks = chunks + (size / 10);
+		i = tab[chunks];
+	}
 	free(tab);
 	return (i);
 }

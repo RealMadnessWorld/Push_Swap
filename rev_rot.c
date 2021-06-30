@@ -31,7 +31,6 @@ void	rra(t_stack **stk_a, int print)
 		tmp = tmp->next;
 	}
 	*stk_a = also_tmp;
-	tmp = *stk_a;
 	if (print == 1)
 		ft_putstr("rra\n");
 }
@@ -56,7 +55,7 @@ void	rrb(t_stack **stk_b, int print)
 	}
 	*stk_b = also_tmp;
 	if (print == 1)
-		ft_putstr("rra\n");
+		ft_putstr("rrb\n");
 }
 
 void	rrr(t_stack **stk_a, t_stack **stk_b)

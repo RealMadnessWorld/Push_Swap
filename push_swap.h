@@ -43,12 +43,13 @@ int			get_me_position(t_stack *stk, int num);
 				/***Algorythm***/
 void		short_sort(t_stack **stk_a);
 void		not_triplet(int size, t_stack **stk_a, t_stack **stk_b);
-int			mediana(t_stack *stk_a, int size);
+int			mediana(t_stack *stk_a, int size, int chunks);
 int			*pre_sort(int *tab, int size);
 void		get_to_work(t_stack **stk_a);
 void		sort_three(t_stack **stk_a, t_stack **stk_b);
 void		big_boi_sort(t_stack **stk_a);
-void		devide(t_stack **stk_a, t_stack **stk_b, t_data *data);
+void		devide_n_conquer(t_stack **stk_a, t_stack **stk_b);
+void		actual_sort(t_stack **stk_a, t_stack **stk_b);
 
 				/***Convert Args***/
 t_stack 	*convert_argv(int argc, char **argv);
