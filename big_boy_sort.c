@@ -38,32 +38,7 @@ void	actual_sort(t_stack **stk_a, t_stack **stk_b)
 	}
 }
 
-void	devide_n_conquer500(t_stack **stk_a, t_stack **stk_b)
-{
-	int size;
-	int perm_size;
-	int med;
-	int chunks;
-
-	chunks = 0;
-	while (ft_lstsize(*stk_a) > 3)
-	{
-		size = ft_lstsize(*stk_a);
-		med = mediana(*stk_a, size, chunks);
-		chunks = chunks + (perm_size / 10);
-		while (size / 10 < size)
-		{
-			if ((*stk_a)->content < med)
-				pb(stk_a, stk_b);
-			else
-				ra(stk_a, 1);
-		}
-	}
-	sort_three(stk_a, stk_b);
-	actual_sort(stk_a, stk_b);
-}
-
-void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b)
+void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b, t_data **chunks)
 {
 	int size;
 	int med;
@@ -71,7 +46,7 @@ void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b)
 	while (ft_lstsize(*stk_a) > 3)
 	{
 		size = ft_lstsize(*stk_a);
-		med = mediana(*stk_a, ft_lstsize(*stk_a), 0);
+		med = mediana(*stk_a, ft_lstsize(*stk_a), chunks);
 		while (ft_lstsize(*stk_a) - 1 > size / 2)
 		{
 			if ((*stk_a)->content < med)
@@ -88,16 +63,18 @@ void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b)
 void	big_boi_sort(t_stack **stk_a)
 {
 	t_stack *stk_b;
+	t_data *chunks;
 
+	chunks->chunks = 0;
 	stk_b = NULL;
 	if (is_sorted(*stk_a))
 		return ;
 	while (!is_sorted(*stk_a))
 	{
 		if (ft_lstsize(*stk_a) <= 100)
-			devide_n_conquer(stk_a, &stk_b);
+			devide_n_conquer(stk_a, &stk_b, &chunks);
 		else
-			devide_n_conquer500(stk_a, &stk_b);
+			devide_n_conquer500(stk_a, &stk_b, &chunks);
 	}
 }
 

@@ -53,3 +53,17 @@ int	get_me_position(t_stack *stk, int num)
 	}
 	return (pos);
 }
+
+int	overpowered(long int *tab)
+{
+	int i;
+
+	i = 0;
+	while (tab[i])
+	{
+		if (tab[i] != 11111111111)
+			return (0);
+		i++;
+	}
+	return (1);
+}

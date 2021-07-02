@@ -3,7 +3,7 @@ NAME = push_swap
 FLAGS = -Wall -Werror -Wextra -g
 SRC_PUSH_SWAP = lst_func.c swap.c push_swap.c tools.c push.c rot.c\
 				rev_rot.c check_argv.c pre_sort.c short_sort.c\
-				trackers.c big_boy_sort.c
+				trackers.c big_boy_sort.c Super_Saiyan_Sort.c
 
 OBJ = $(SRC_PUSH_SWAP:.c=.o)
 

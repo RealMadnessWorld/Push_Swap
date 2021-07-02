@@ -16,6 +16,7 @@ void	get_to_work(t_stack **stk_a)
 {
 	int i;
 
+	printf("ugh\n");
 	if (ft_lstsize(*stk_a) < 8)
 		short_sort(stk_a);
 	else if (ft_lstsize(*stk_a) <= 100)

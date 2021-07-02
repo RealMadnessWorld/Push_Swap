@@ -32,7 +32,42 @@ int	*pre_sort(int *tab, int size)
 	return (tab);
 }
 
-int	mediana(t_stack *stk_a, int size, int chunks)
+long int	**tab_500(t_stack *stk_a, int size)
+{
+	int *tab;
+	long int **tab500;
+	int i;
+	int j;
+	int x;
+
+	i = 0;
+	x = 0;
+	tab = malloc(sizeof(int) * size);
+	tab500 = malloc(sizeof(int) * size);
+	while (stk_a)
+	{
+		tab[i] = stk_a->content;
+		stk_a = stk_a->next;
+		i++;
+	}
+	i = 0;
+	tab = pre_sort(tab, size);
+	while (tab[i])
+	{
+		j = 0;
+		while (j != size / 10)
+		{
+			tab500[x][j] = tab[i];
+			j++;
+			i++;
+		}
+		x++;
+	}
+	free(tab);
+	return(tab500);
+}
+
+int	mediana(t_stack *stk_a, int size, t_data **chunks)
 {
 	int *tab;
 	int i;
@@ -55,9 +90,12 @@ int	mediana(t_stack *stk_a, int size, int chunks)
 	}
 	else
 	{
-		chunks = chunks + (size / 10);
-		i = tab[chunks];
+		printf("pre = %i\n", (*chunks)->chunks);
+		(*chunks)->chunks = (*chunks)->chunks + (size / 10);
+		i = tab[(*chunks)->chunks];
+		printf("after = %i\n", (*chunks)->chunks);
 	}
 	free(tab);
+	printf("devolve = %i\n", i);
 	return (i);
 }
