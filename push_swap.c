@@ -19,8 +19,6 @@ void	get_to_work(t_stack **stk_a)
 	printf("ugh\n");
 	if (ft_lstsize(*stk_a) < 8)
 		short_sort(stk_a);
-	else if (ft_lstsize(*stk_a) <= 100)
-		big_boi_sort(stk_a);
 	else
 		big_boi_sort(stk_a);
 }

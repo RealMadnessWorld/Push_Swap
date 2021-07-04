@@ -38,7 +38,7 @@ void	actual_sort(t_stack **stk_a, t_stack **stk_b)
 	}
 }
 
-void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b, t_data **chunks)
+void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b)
 {
 	int size;
 	int med;
@@ -46,7 +46,7 @@ void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b, t_data **chunks)
 	while (ft_lstsize(*stk_a) > 3)
 	{
 		size = ft_lstsize(*stk_a);
-		med = mediana(*stk_a, ft_lstsize(*stk_a), chunks);
+		med = mediana(*stk_a, ft_lstsize(*stk_a));
 		while (ft_lstsize(*stk_a) - 1 > size / 2)
 		{
 			if ((*stk_a)->content < med)
@@ -72,9 +72,9 @@ void	big_boi_sort(t_stack **stk_a)
 	while (!is_sorted(*stk_a))
 	{
 		if (ft_lstsize(*stk_a) <= 100)
-			devide_n_conquer(stk_a, &stk_b, &chunks);
+			devide_n_conquer(stk_a, &stk_b);
 		else
-			devide_n_conquer500(stk_a, &stk_b, &chunks);
+			devide_n_conquer500(stk_a, &stk_b, chunks);
 	}
 }
 

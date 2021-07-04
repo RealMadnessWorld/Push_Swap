@@ -12,62 +12,93 @@
 
 #include "push_swap.h"
 
-int	*pre_sort(int *tab, int size)
+void	print_array(long int *array, int size)
+{
+	int i = 0;
+
+	while (i < size)
+	{
+		printf("%ld \n", array[i]);
+		i++;
+	}
+}
+
+void	pre_sort(int *tab, int size)
 {
 	int i;
-	int j;
+	int tmp;
 
 	i = 0;
-	while (i < size - 1)
+	while (i < size)
 	{
-		j = 0;
-		while (j < size - i - 1)
+		if (tab[i] > tab[i + 1])
 		{
-			if (tab[j] > tab[j + 1])
-				swap(&tab[j], &tab[j + 1]);
-			j++;
+			tmp = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = tmp;
+			i = -1;
 		}
 		i++;
 	}
-	return (tab);
 }
 
-long int	**tab_500(t_stack *stk_a, int size)
+// long int	**tab_500(t_stack *stk_a, int size)
+// {
+// 	int *tab;
+// 	long int *tab500[size / 10];
+// 	int i;
+// 	int j;
+// 	int x;
+
+// 	i = 0;
+// 	x = 0;
+// 	tab = malloc(sizeof(int) * size);
+// 	while (stk_a)
+// 	{
+// 		tab[i] = stk_a->content;
+// 		// printf("tab[i] = %d\n\n", tab[i]);
+// 		stk_a = stk_a->next;
+// 		i++;
+// 	}
+// 	i = 0;
+// 	tab = pre_sort(tab, size);
+// 	tab500 = malloc(sizeof(long int) * size);
+// 	while (tab[i])
+// 	{
+// 		j = 0;
+// 		while (j != size / 10)
+// 		{
+// 			tab500[x][j] = tab[i];
+// 			j++;
+// 			i++;
+// 			// printf("tab[i] = %d\n\n", tab[i]);
+// 		}
+// 		x++;
+// 	}
+// 	free(tab);
+// 	return(tab500);
+// }
+
+int	mediana500(t_stack *stk_a, int size, t_data *chunks)
 {
 	int *tab;
-	long int **tab500;
 	int i;
-	int j;
-	int x;
 
 	i = 0;
-	x = 0;
 	tab = malloc(sizeof(int) * size);
-	tab500 = malloc(sizeof(int) * size);
 	while (stk_a)
 	{
 		tab[i] = stk_a->content;
 		stk_a = stk_a->next;
 		i++;
 	}
-	i = 0;
-	tab = pre_sort(tab, size);
-	while (tab[i])
-	{
-		j = 0;
-		while (j != size / 10)
-		{
-			tab500[x][j] = tab[i];
-			j++;
-			i++;
-		}
-		x++;
-	}
-	free(tab);
-	return(tab500);
+	pre_sort(tab, size);
+	chunks->chunks = chunks->chunks + (size / 10);
+	i = tab[chunks->chunks];
+	return (i);
 }
 
-int	mediana(t_stack *stk_a, int size, t_data **chunks)
+int	mediana(t_stack *stk_a, int size)
 {
 	int *tab;
 	int i;
@@ -80,21 +111,11 @@ int	mediana(t_stack *stk_a, int size, t_data **chunks)
 		stk_a = stk_a->next;
 		i++;
 	}
-	tab = pre_sort(tab, size);
+	pre_sort(tab, size);
 	i = 0;
-	if (size <= 100)
-	{
-		while (i < size / 2)
-			i++;
-		i = tab[i];
-	}
-	else
-	{
-		printf("pre = %i\n", (*chunks)->chunks);
-		(*chunks)->chunks = (*chunks)->chunks + (size / 10);
-		i = tab[(*chunks)->chunks];
-		printf("after = %i\n", (*chunks)->chunks);
-	}
+	while (i < size / 2)
+		i++;
+	i = tab[i];
 	free(tab);
 	printf("devolve = %i\n", i);
 	return (i);
