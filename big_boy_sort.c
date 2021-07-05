@@ -34,7 +34,6 @@ void	actual_sort(t_stack **stk_a, t_stack **stk_b)
 				rrb(stk_b, 1);
 		}
 		pa(stk_a, stk_b);
-		//break ;
 	}
 }
 
@@ -47,13 +46,12 @@ void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b)
 	{
 		size = ft_lstsize(*stk_a);
 		med = mediana(*stk_a, ft_lstsize(*stk_a));
-		while (ft_lstsize(*stk_a) - 1 > size / 2)
+		while (get_me_min(*stk_a) < med)
 		{
 			if ((*stk_a)->content < med)
 				pb(stk_a, stk_b);
 			else
 				ra(stk_a, 1);
-			printf("betch\n");
 		}
 	}
 	sort_three(stk_a, stk_b);
@@ -71,13 +69,11 @@ void	big_boi_sort(t_stack **stk_a)
 		return ;
 	while (!is_sorted(*stk_a))
 	{
-		if (ft_lstsize(*stk_a) <= 100)
+		if (ft_lstsize(*stk_a) < 8)
+			short_sort(stk_a);
+		else if (ft_lstsize(*stk_a) <= 100)
 			devide_n_conquer(stk_a, &stk_b);
 		else
 			devide_n_conquer500(stk_a, &stk_b, chunks);
 	}
 }
-
-		//sort(array, temp);
-		// ps->chunks = ps->chunks + (temp / 10);
-		// middle = array[ps->chunks];

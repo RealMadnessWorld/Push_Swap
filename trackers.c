@@ -53,21 +53,3 @@ int	get_me_position(t_stack *stk, int num)
 	}
 	return (pos);
 }
-
-int	overpowered(long int *tab, int size)
-{
-	int i;
-
-	i = 0;
-	printf("tab[i] = %ld\n\n", tab[i]);
-	while (i < size)
-	{
-		if (tab[i] != 11111111111)
-		{
-			return (1);
-		}
-		printf("fuck me\n");
-		i++;
-	}
-	return (0);
-}

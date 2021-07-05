@@ -30,30 +30,25 @@ typedef struct s_data
 	int chunks;
 }			t_data;
 
-void	print_array(long int *array, int size);
-
 				/***Tracking***/
 int			is_sorted(t_stack *stk);
 int			is_rev_sorted(t_stack *stk);
 int			get_me_max(t_stack *stk);
 int			get_me_min(t_stack *stk);
 int			get_me_position(t_stack *stk, int num);
-int			overpowered(long int *tab, int size);
 
 				/***Algorythm***/
 void		short_sort(t_stack **stk_a);
 void		not_triplet(int size, t_stack **stk_a, t_stack **stk_b);
 int			mediana(t_stack *stk_a, int size);
 void		pre_sort(int *tab, int size);
-void		get_to_work(t_stack **stk_a);
 void		sort_three(t_stack **stk_a, t_stack **stk_b);
 void		big_boi_sort(t_stack **stk_a);
 void		devide_n_conquer(t_stack **stk_a, t_stack **stk_b);
 void		actual_sort(t_stack **stk_a, t_stack **stk_b);
-void		deal_with_chunks(t_stack **stk_a, t_stack **stk_b, int div, t_data *chunks);
+void		deal_with_chunks(t_stack **stk_a, t_stack **stk_b, t_data *chunks);
 void		devide_n_conquer500(t_stack **stk_a, t_stack **stk_b, t_data *chunks);
 int			mediana500(t_stack *stk_a, int size, t_data *chunks);
-//long int	**tab_500(t_stack *stk_a, int size);
 
 				/***Convert Args***/
 t_stack 	*convert_argv(int argc, char **argv);

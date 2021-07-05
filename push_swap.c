@@ -12,17 +12,6 @@
 
 #include "push_swap.h"
 
-void	get_to_work(t_stack **stk_a)
-{
-	int i;
-
-	printf("ugh\n");
-	if (ft_lstsize(*stk_a) < 8)
-		short_sort(stk_a);
-	else
-		big_boi_sort(stk_a);
-}
-
 int main(int argc, char **argv)
 {
 	t_stack *stk_a;
@@ -33,7 +22,7 @@ int main(int argc, char **argv)
 	stk_a = NULL;
 	if (!(stk_a = convert_argv(argc, argv)))
 		return (write(1,"Error\n",6));
-	get_to_work(&stk_a);
+	big_boi_sort(&stk_a);
 	tmp = stk_a;
 	// while (tmp)
 	// {
