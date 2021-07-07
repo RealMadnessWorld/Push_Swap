@@ -24,12 +24,12 @@ int main(int argc, char **argv)
 		return (write(1,"Error\n",6));
 	big_boi_sort(&stk_a);
 	tmp = stk_a;
-	// while (tmp)
-	// {
-	// 	printf("*%i*", tmp->content);
-	// 	tmp = tmp->next;
-	// }
-	// printf("\n");
+	while (tmp)
+	{
+		printf("*%i*\n", tmp->content);
+		tmp = tmp->next;
+	}
+	printf("\n");
 	be_free_my_child(stk_a);
 	return 0;
 }

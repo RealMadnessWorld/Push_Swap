@@ -24,7 +24,6 @@ int	check_dup(t_stack *list)
 		{
 			xxx = list->content;
 			tmp = tmp->next;
-			//printf("tmp = %-4i <-> xxx = %i\n", tmp->content, xxx);
 			if (xxx == tmp->content)
 				return (0);	
 		}
@@ -90,8 +89,7 @@ t_stack *convert_argv(int argc, char **argv)
 		return (0);
 	if (!check_dup(head))
 	{
-		printf("failed dup\n");
-		be_free_my_child(	head);
+		be_free_my_child(head);
 		return (0);
 	}
 	return (head);

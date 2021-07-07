@@ -64,6 +64,7 @@ void	big_boi_sort(t_stack **stk_a)
 	t_data *chunks;
 
 	chunks->chunks = 0;
+	printf("hi\n");
 	stk_b = NULL;
 	if (is_sorted(*stk_a))
 		return ;

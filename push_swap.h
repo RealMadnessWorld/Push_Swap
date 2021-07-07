@@ -16,8 +16,6 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-// typedef INT_MIN -2147483648;
-// typedef INT_MAX 2147483647;
 
 typedef struct s_stack
 {
