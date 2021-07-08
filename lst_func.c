@@ -24,7 +24,7 @@ t_stack	*ft_lstnew(int content)
 	return (new);
 }
 
-t_stack		*ft_lstlast(t_stack *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -39,7 +39,7 @@ t_stack		*ft_lstlast(t_stack *lst)
 
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if (!new)
 		return ;
@@ -62,9 +62,9 @@ void	be_free_my_child(t_stack *lst)
 	lst = NULL;
 }
 
-int		ft_lstsize(t_stack *lst)
+int	ft_lstsize(t_stack *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (lst)

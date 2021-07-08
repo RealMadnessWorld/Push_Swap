@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Super_Saiyan_Sort.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jarsenio <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/08 16:50:30 by jarsenio          #+#    #+#             */
+/*   Updated: 2021/07/08 16:50:34 by jarsenio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	devide_n_conquer500(t_stack **stk_a, t_stack **stk_b, t_data *chunks)
 {
-	int perm_size;
-	int med;
+	int	perm_size;
+	int	med;
 
 	chunks->chunks = 0;
 	perm_size = ft_lstsize(*stk_a);

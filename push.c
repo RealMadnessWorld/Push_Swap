@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void    pa(t_stack **stk_a, t_stack **stk_b)
+void	pa(t_stack **stk_a, t_stack **stk_b)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!stk_b)
 		return ;
@@ -25,9 +25,9 @@ void    pa(t_stack **stk_a, t_stack **stk_b)
 	ft_putstr("pa\n");
 }
 
-void    pb(t_stack **stk_a, t_stack **stk_b)
+void	pb(t_stack **stk_a, t_stack **stk_b)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (!stk_a)
 		return ;

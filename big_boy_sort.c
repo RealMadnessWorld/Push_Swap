@@ -14,9 +14,9 @@
 
 void	actual_sort(t_stack **stk_a, t_stack **stk_b)
 {
-	int x;
-	int max;
-	int size;
+	int	x;
+	int	max;
+	int	size;
 
 	while (*stk_b)
 	{
@@ -39,8 +39,8 @@ void	actual_sort(t_stack **stk_a, t_stack **stk_b)
 
 void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b, t_data *chunks)
 {
-	int med;
-	int perm_size;
+	int	med;
+	int	perm_size;
 
 	chunks->chunks = 0;
 	perm_size = ft_lstsize(*stk_a);
@@ -61,10 +61,11 @@ void	devide_n_conquer(t_stack **stk_a, t_stack **stk_b, t_data *chunks)
 
 int	big_boi_sort(t_stack **stk_a)
 {
-	t_stack *stk_b;
-	t_data *chunks;
+	t_stack	*stk_b;
+	t_data	*chunks;
 
-	if(!(chunks = malloc(sizeof(t_data))))
+	chunks = malloc(sizeof(t_data));
+	if (!chunks)
 		return (0);
 	stk_b = NULL;
 	if (is_sorted(*stk_a))

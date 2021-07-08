@@ -14,8 +14,8 @@
 
 void	rra(t_stack **stk_a, int print)
 {
-	t_stack *tmp;
-	t_stack *also_tmp;
+	t_stack	*tmp;
+	t_stack	*also_tmp;
 
 	also_tmp = NULL;
 	tmp = *stk_a;
@@ -37,8 +37,8 @@ void	rra(t_stack **stk_a, int print)
 
 void	rrb(t_stack **stk_b, int print)
 {
-	t_stack *tmp;
-	t_stack *also_tmp;
+	t_stack	*tmp;
+	t_stack	*also_tmp;
 
 	also_tmp = NULL;
 	tmp = *stk_b;

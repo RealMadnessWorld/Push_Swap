@@ -12,24 +12,19 @@
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack *stk_a;
-	t_stack *tmp;
+	t_stack	*stk_a;
+	t_stack	*tmp;
 
 	if (argc < 3)
-		return(write(1,"Error\n",6));
+		return (write(1, "Error\n", 6));
 	stk_a = NULL;
-	if (!(stk_a = convert_argv(argc, argv)))
-		return (write(1,"Error\n",6));
+	stk_a = convert_argv(argc, argv);
+	if (!stk_a)
+		return (write(1, "Error\n", 6));
 	big_boi_sort(&stk_a);
 	tmp = stk_a;
-	// while (tmp)
-	// {
-	// 	printf("*%i*\n", tmp->content);
-	// 	tmp = tmp->next;
-	// }
-	// printf("\n");
 	be_free_my_child(stk_a);
-	return 0;
+	return (0);
 }

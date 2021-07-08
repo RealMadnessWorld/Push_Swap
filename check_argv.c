@@ -14,8 +14,8 @@
 
 int	check_dup(t_stack *list)
 {
-	t_stack *tmp;
-	int xxx;
+	t_stack	*tmp;
+	int		xxx;
 
 	while (list->next)
 	{
@@ -25,7 +25,7 @@ int	check_dup(t_stack *list)
 			xxx = list->content;
 			tmp = tmp->next;
 			if (xxx == tmp->content)
-				return (0);	
+				return (0);
 		}
 		list = list->next;
 	}
@@ -36,13 +36,13 @@ int	check(char *s, int i, int leng)
 {
 	while (s[i] != '\0')
 	{
-		if (((!ft_isdigit(s[i]) && (s[i] != '-' && s[i] != '+'))) || 
-				(s[i] == '-' && (!ft_isdigit(s[i + 1])) || 
-				((s[i] == '+' || s[i] == '-') && 
-				(s[i + 1] == '-' || s[i + 1] == '+'))))
+		if (((!ft_isdigit(s[i]) && (s[i] != '-' && s[i] != '+')))
+			|| (s[i] == '-' && (!ft_isdigit(s[i + 1]))
+				|| ((s[i] == '+' || s[i] == '-')
+					&& (s[i + 1] == '-' || s[i + 1] == '+'))))
 			return (0);
 		if (s[i] == '+' || s[i] == '-')
-				i++;
+			i++;
 		while (ft_isdigit(s[i]))
 		{
 			leng++;
@@ -58,13 +58,12 @@ int	check(char *s, int i, int leng)
 
 t_stack	*the_creator(int argc, char **argv, t_stack *head, int i)
 {
-	long int xxx;
+	long int	xxx;
 
 	while (i < argc)
 	{
 		if (!check(argv[i], 0, 0))
 		{
-			printf("failed first check\n");
 			if (head)
 				be_free_my_child(head);
 			return (0);
@@ -78,14 +77,15 @@ t_stack	*the_creator(int argc, char **argv, t_stack *head, int i)
 	return (head);
 }
 
-t_stack *convert_argv(int argc, char **argv)
+t_stack	*convert_argv(int argc, char **argv)
 {
-	t_stack *head;
-	int i;
-	
+	t_stack	*head;
+	int		i;
+
 	head = NULL;
 	i = 1;
-	if (!(head = the_creator(argc, argv, head, i)))
+	head = the_creator(argc, argv, head, i);
+	if (!head)
 		return (0);
 	if (!check_dup(head))
 	{

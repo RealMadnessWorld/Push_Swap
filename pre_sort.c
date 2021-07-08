@@ -12,21 +12,10 @@
 
 #include "push_swap.h"
 
-// void	print_array(long int *array, int size)
-// {
-// 	int i = 0;
-
-// 	while (i < size)
-// 	{
-// 		printf("%ld \n", array[i]);
-// 		i++;
-// 	}
-// }
-
 void	pre_sort(int *tab, int size)
 {
-	int i;
-	int tmp;
+	int	i;
+	int	tmp;
 
 	i = 0;
 	while (i < size)
@@ -44,8 +33,8 @@ void	pre_sort(int *tab, int size)
 
 int	mediana500(t_stack *stk_a, int size, t_data *chunks)
 {
-	int *tab;
-	int i;
+	int	*tab;
+	int	i;
 
 	i = 0;
 	tab = malloc(sizeof(int) * size);
@@ -56,7 +45,7 @@ int	mediana500(t_stack *stk_a, int size, t_data *chunks)
 		i++;
 	}
 	pre_sort(tab, size);
-	chunks->chunks = chunks->chunks + (size / 10);
+	chunks->chunks = chunks->chunks + (size / 20);
 	i = tab[chunks->chunks];
 	free(tab);
 	return (i);
@@ -64,8 +53,8 @@ int	mediana500(t_stack *stk_a, int size, t_data *chunks)
 
 int	mediana(t_stack *stk_a, int size, t_data *chunks)
 {
-	int *tab;
-	int i;
+	int	*tab;
+	int	i;
 
 	i = 0;
 	tab = malloc(sizeof(int) * size);

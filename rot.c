@@ -14,8 +14,8 @@
 
 void	ra(t_stack **stk_a, int print)
 {
-	t_stack *tmp;
-	t_stack *also_tmp;
+	t_stack	*tmp;
+	t_stack	*also_tmp;
 
 	if (!(*stk_a) || !((*stk_a)->next))
 		return ;
@@ -30,10 +30,10 @@ void	ra(t_stack **stk_a, int print)
 		ft_putstr("ra\n");
 }
 
-void    rb(t_stack **stk_b, int print)
+void	rb(t_stack **stk_b, int print)
 {
-	t_stack *tmp;
-	t_stack *also_tmp;
+	t_stack	*tmp;
+	t_stack	*also_tmp;
 
 	if (!(*stk_b) || !((*stk_b)->next))
 		return ;

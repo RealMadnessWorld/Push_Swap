@@ -27,8 +27,8 @@ void	sort_three(t_stack **stk_a, t_stack **stk_b)
 
 void	not_triplet(int size, t_stack **stk_a, t_stack **stk_b)
 {
-	int i;
-	int x;
+	int	i;
+	int	x;
 
 	i = 0;
 	while (i < 2)
@@ -50,8 +50,8 @@ void	not_triplet(int size, t_stack **stk_a, t_stack **stk_b)
 
 void	short_sort(t_stack **stk_a)
 {
-	int size;
-	t_stack *stk_b;
+	int		size;
+	t_stack	*stk_b;
 
 	stk_b = NULL;
 	size = ft_lstsize(*stk_a);
