@@ -62,7 +62,7 @@ int	mediana500(t_stack *stk_a, int size, t_data *chunks)
 	return (i);
 }
 
-int	mediana(t_stack *stk_a, int size)
+int	mediana(t_stack *stk_a, int size, t_data *chunks)
 {
 	int *tab;
 	int i;
@@ -76,10 +76,8 @@ int	mediana(t_stack *stk_a, int size)
 		i++;
 	}
 	pre_sort(tab, size);
-	i = 0;
-	while (i < size / 2)
-		i++;
-	i = tab[i];
+	chunks->chunks = chunks->chunks + (size / 2);
+	i = tab[chunks->chunks];
 	free(tab);
 	return (i);
 }

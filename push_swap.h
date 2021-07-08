@@ -38,13 +38,12 @@ int			get_me_position(t_stack *stk, int num);
 				/***Algorythm***/
 void		short_sort(t_stack **stk_a);
 void		not_triplet(int size, t_stack **stk_a, t_stack **stk_b);
-int			mediana(t_stack *stk_a, int size);
+int			mediana(t_stack *stk_a, int size, t_data *chunks);
 void		pre_sort(int *tab, int size);
 void		sort_three(t_stack **stk_a, t_stack **stk_b);
-void		big_boi_sort(t_stack **stk_a);
-void		devide_n_conquer(t_stack **stk_a, t_stack **stk_b);
+int			big_boi_sort(t_stack **stk_a);
+void		devide_n_conquer(t_stack **stk_a, t_stack **stk_b, t_data *chunks);
 void		actual_sort(t_stack **stk_a, t_stack **stk_b);
-void		deal_with_chunks(t_stack **stk_a, t_stack **stk_b, t_data *chunks);
 void		devide_n_conquer500(t_stack **stk_a, t_stack **stk_b, t_data *chunks);
 int			mediana500(t_stack *stk_a, int size, t_data *chunks);
 

@@ -9,7 +9,6 @@ int	is_sorted(t_stack *stk)
 			return (0);
 		stk = stk->next;
 	}
-	//printf("is sorted \n");
 	return (1);
 }
 
