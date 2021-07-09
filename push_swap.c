@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_stack	*stk_a;
 
 	if (argc < 3)
-		return (write(1, "Error\n", 6));
+		return (0);
 	stk_a = NULL;
 	stk_a = convert_argv(argc, argv);
 	if (!stk_a)
