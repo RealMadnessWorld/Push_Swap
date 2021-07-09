@@ -79,5 +79,6 @@ int	big_boi_sort(t_stack **stk_a)
 		else
 			devide_n_conquer500(stk_a, &stk_b, chunks);
 	}
+	free(chunks);
 	return (1);
 }
