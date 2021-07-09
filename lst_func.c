@@ -54,12 +54,14 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 
 void	be_free_my_child(t_stack *lst)
 {
-	while (lst)
+	t_stack *tmp;
+
+	while (lst != NULL)
 	{
-		free(lst);
+		tmp = lst;
 		lst = lst->next;
+		free(tmp);
 	}
-	lst = NULL;
 }
 
 int	ft_lstsize(t_stack *lst)

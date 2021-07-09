@@ -15,7 +15,6 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*stk_a;
-	t_stack	*tmp;
 
 	if (argc < 3)
 		return (write(1, "Error\n", 6));
@@ -24,7 +23,6 @@ int	main(int argc, char **argv)
 	if (!stk_a)
 		return (write(1, "Error\n", 6));
 	big_boi_sort(&stk_a);
-	tmp = stk_a;
 	be_free_my_child(stk_a);
 	return (0);
 }
